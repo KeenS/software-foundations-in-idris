@@ -1,0 +1,6 @@
+package software_foundations
+
+sourcedir  = src
+modules    = Basics
+opts       = "--check --total -X ElabReflection"
+

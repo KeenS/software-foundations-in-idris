@@ -1,4 +1,0 @@
-[[packages]]
-id = 'blackenedgold/software-foundations-in-idris@dir+/home/shun/Idris/software-foundations-in-idris'
-version = '0.1.0'
-dependencies = []
