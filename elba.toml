@@ -1,0 +1,13 @@
+[package]
+name = "blackenedgold/software-foundations-in-idris"
+version = "0.1.0"
+authors = ["κeen"]
+
+[dependencies]
+
+[targets.lib]
+path = "src"
+mods = [
+    "SoftwareFoundationsInIdris"
+]
+
