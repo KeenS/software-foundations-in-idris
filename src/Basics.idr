@@ -116,9 +116,9 @@ namespace Numbers
 
 namespace Playground2
 
-  plus : (n : Nat) -> (m : Nat) -> Nat
-  plus Z m = m
-  plus (S k) m = S (Basics.Playground2.plus k m)
+--   plus : (n : Nat) -> (m : Nat) -> Nat
+--   plus Z m = m
+--   plus (S k) m = S (Basics.Playground2.plus k m)
 
 
   -- mult : (n, m : Nat) -> Nat
@@ -163,7 +163,70 @@ namespace Playground2
   testLte2 : lte 2 4 = True
   testLte2 = Refl
 
+
   testLte3 : lte 4 2 = False
   testLte3 = Refl
 
   -- BasicsExc.ExcBltNat
+
+  plus_Z_n : (n : Nat) -> 0 + n = n
+  plus_Z_n _ = Refl
+
+  plus_1_l : (n : Nat) -> 1 + n = S n
+  plus_1_l _ = Refl
+
+  mult_0_l : (n : Nat) -> 0 * n = 0
+  mult_0_l _ = Refl
+
+  -- plus_n_Z : (n: Nat) -> n = n + 0
+  -- plus_n_Z n = Refl
+
+  plus_id_example : (n, m: Nat) -> (n = m) -> n + n = m + m
+  plus_id_example n m prf = rewrite prf in Refl
+
+  -- BasicsExc.ExcPlusIdExercise
+
+  mult_0_plus : (n, m : Nat) -> (0 + n) * m = n * (0 + m)
+  mult_0_plus n m = Refl
+
+  -- BasicsExc.ExcMultS1
+
+  -- plus_1_neq_0_firsttry : (n :Nat) -> (n + 1) == 0 = False
+  -- plus_1_neq_0_firsttry n = Refl
+
+  plus_1_neq_0 : (n: Nat) -> (n + 1) == 0 = False
+  plus_1_neq_0 Z = Refl
+  plus_1_neq_0 (S k) = Refl
+
+  ||| a proof that boolean netation is involutive
+  not_involutive : (b : Bool) -> not (not b) = b
+  not_involutive False = Refl
+  not_involutive True = Refl
+
+  andb_commutative : (b, c : Bool) -> b && c = c && b
+  andb_commutative False False = Refl
+  andb_commutative False True = Refl
+  andb_commutative True False = Refl
+  andb_commutative True True = Refl
+
+  andb_commutative'_rhs_1 : (c : Bool) -> False = (c && (Delay False))
+  andb_commutative'_rhs_1 False = Refl
+  andb_commutative'_rhs_1 True = Refl
+
+  andb_commutative'_rhs_2 : (c : Bool) -> c = (c && (Delay True))
+  andb_commutative'_rhs_2 False = Refl
+  andb_commutative'_rhs_2 True = Refl
+
+  andb_commutative' : (b, c : Bool) -> b && c = c && b
+  andb_commutative' False = andb_commutative'_rhs_1
+  andb_commutative' True = andb_commutative'_rhs_2
+
+  -- BasicExc.AndbTrueElim2
+
+  -- BasicExc.ZeroNbeqPlus1
+
+  -- BasicExc.BooleanFunctions
+
+  -- BasicExc.AndbEqOrb
+
+  -- BasicExc.Binary
