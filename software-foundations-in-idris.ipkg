@@ -2,5 +2,6 @@ package software_foundations
 
 sourcedir  = src
 modules    = Basics
+           , Induction
 opts       = "--check --total -X ElabReflection"
 
